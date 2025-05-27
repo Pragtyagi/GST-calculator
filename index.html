@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free GST Calculator Online - India</title>
+  <meta name="description" content="Use our free online GST calculator to calculate CGST, SGST, and IGST in India easily. GST calculator for 5%, 12%, 18%, 28% rates.">
+  <meta name="keywords" content="GST calculator, GST India, online calculator, CGST, SGST, free GST calculator">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="canonical" href="https://yourusername.github.io/gst-calculator" />
+</head>
+<body>
+  <div class="container">
+    <h1>GST Calculator - India</h1>
+    <p>Enter amount and select GST rate to calculate GST breakdown.</p>
+
+    <input type="number" id="amount" placeholder="Enter Amount" />
+    <select id="gst-rate">
+      <option value="5">5%</option>
+      <option value="12">12%</option>
+      <option value="18">18%</option>
+      <option value="28">28%</option>
+    </select>
+    <button onclick="calculateGST()">Calculate</button>
+
+    <div class="output">
+      <p>CGST: ₹<span id="cgst">0</span></p>
+      <p>SGST: ₹<span id="sgst">0</span></p>
+      <p>Total GST: ₹<span id="total-gst">0</span></p>
+      <p>Total Amount: ₹<span id="total-amount">0</span></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
