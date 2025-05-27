@@ -3,31 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free GST Calculator Online - India</title>
-  <meta name="description" content="Use our free online GST calculator to calculate CGST, SGST, and IGST in India easily. GST calculator for 5%, 12%, 18%, 28% rates.">
-  <meta name="keywords" content="GST calculator, GST India, online calculator, CGST, SGST, free GST calculator">
+  <title>Advanced GST Calculator - India</title>
+  <meta name="description" content="Free advanced GST calculator tool to calculate CGST, SGST with inclusive/exclusive tax options.">
   <link rel="stylesheet" href="style.css" />
-  <link rel="canonical" href="https://yourusername.github.io/gst-calculator" />
 </head>
 <body>
   <div class="container">
-    <h1>GST Calculator - India</h1>
-    <p>Enter amount and select GST rate to calculate GST breakdown.</p>
+    <h1>GST Calculator</h1>
+    <p class="subtitle">Choose GST type, enter amount, and select rate</p>
 
-    <input type="number" id="amount" placeholder="Enter Amount" />
-    <select id="gst-rate">
-      <option value="5">5%</option>
-      <option value="12">12%</option>
-      <option value="18">18%</option>
-      <option value="28">28%</option>
-    </select>
-    <button onclick="calculateGST()">Calculate</button>
+    <div class="form-group">
+      <input type="number" id="amount" placeholder="Enter Amount (₹)" />
+      
+      <select id="gst-type">
+        <option value="exclusive">Amount is without GST (Exclusive)</option>
+        <option value="inclusive">Amount includes GST (Inclusive)</option>
+      </select>
 
-    <div class="output">
-      <p>CGST: ₹<span id="cgst">0</span></p>
-      <p>SGST: ₹<span id="sgst">0</span></p>
-      <p>Total GST: ₹<span id="total-gst">0</span></p>
-      <p>Total Amount: ₹<span id="total-amount">0</span></p>
+      <select id="gst-rate">
+        <option value="5">5% GST</option>
+        <option value="12">12% GST</option>
+        <option value="18">18% GST</option>
+        <option value="28">28% GST</option>
+      </select>
+
+      <button onclick="calculateGST()">Calculate</button>
+      <button onclick="clearFields()" class="secondary">Clear</button>
+    </div>
+
+    <div class="results" id="results" style="display: none;">
+      <div class="result-box">CGST: ₹<span id="cgst">0</span></div>
+      <div class="result-box">SGST: ₹<span id="sgst">0</span></div>
+      <div class="result-box">Total GST: ₹<span id="total-gst">0</span></div>
+      <div class="result-box">Amount without GST: ₹<span id="pre-tax">0</span></div>
+      <div class="result-box highlight">Total Payable Amount: ₹<span id="total-amount">0</span></div>
+      <button onclick="copyResults()">📋 Copy Results</button>
     </div>
   </div>
 
